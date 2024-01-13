@@ -1,23 +1,24 @@
 package com.epam.rd.autotasks;
 
 public class CountDownTask implements Task{
-
+    int countdown;
     public CountDownTask(int value) {
-        throw new UnsupportedOperationException();
+        this.countdown = Math.max(value, 0);
     }
 
     public int getValue() {
-        throw new UnsupportedOperationException();
+        return countdown;
     }
 
 
     @Override
     public void execute() {
-        throw new UnsupportedOperationException();
+        if (!isFinished())
+            countdown--;
     }
 
     @Override
     public boolean isFinished() {
-        throw new UnsupportedOperationException();
+        return (countdown==0);
     }
 }
